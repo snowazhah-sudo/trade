@@ -53,9 +53,11 @@
 
 ## Этап 2. Запуск Chrome
 
-- [ ] **2.1** `ChromeLauncher` — функция открыть URL именно в Google Chrome
+- [x] **2.1** `ChromeLauncher` — функция открыть URL именно в Google Chrome
   через `Intent` (`com.android.chrome`), с фолбэком на дефолтный браузер.
-- [ ] **2.2** Нормализация URL (добавить `https://` если схемы нет, валидация).
+  > Сделано: browser/ChromeLauncher.kt (isChromeInstalled, open → enum LaunchResult).
+- [x] **2.2** Нормализация URL (добавить `https://` если схемы нет, валидация).
+  > Сделано: browser/UrlNormalizer.kt (Patterns.WEB_URL).
 
 ## Этап 3. Accessibility Service (ядро)
 
