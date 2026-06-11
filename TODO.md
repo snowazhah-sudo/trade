@@ -19,9 +19,12 @@
 
 ## Этап 0. Каркас проекта
 
-- [ ] **0.1** Создать структуру Gradle-проекта: `settings.gradle.kts`,
+- [x] **0.1** Создать структуру Gradle-проекта: `settings.gradle.kts`,
   корневой `build.gradle.kts`, `gradle.properties`, обёртку Gradle
   (`gradlew`, `gradle/wrapper/...`).
+  > Сделано: settings/build/gradle.properties, gradlew(+.bat), wrapper.properties,
+  > .gitignore. Бинарный gradle-wrapper.jar генерируется командой `gradle wrapper`
+  > (см. gradle/wrapper/README.md) — проверить на устройстве/в Android Studio.
 - [ ] **0.2** Создать модуль `app/` с `app/build.gradle.kts` (Kotlin, Compose,
   minSdk 26, targetSdk актуальный), подключить нужные зависимости.
 - [ ] **0.3** Создать `app/src/main/AndroidManifest.xml`: `MainActivity`,
