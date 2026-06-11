@@ -85,14 +85,18 @@
 
 ## Этап 4. UI
 
-- [ ] **4.1** `MainActivity` + Compose-экран: поля URL и «что искать»,
+- [x] **4.1** `MainActivity` + Compose-экран: поля URL и «что искать»,
   переключатель режима, кнопка «Запустить».
-- [ ] **4.2** Проверка, включён ли наш Accessibility Service; если нет — баннер
+  > Сделано: ui/MainActivity.kt (Compose, поля, FilterChip CONTAINS/REGEX).
+- [x] **4.2** Проверка, включён ли наш Accessibility Service; если нет — баннер
   и кнопка «Открыть настройки спец. возможностей».
-- [ ] **4.3** Кнопка «Запустить»: сохранить запрос в репозиторий → запустить
+  > Сделано: AccessibilityHelper + ServiceOffBanner, перепроверка на ON_RESUME.
+- [x] **4.3** Кнопка «Запустить»: сохранить запрос в репозиторий → запустить
   Chrome через `ChromeLauncher`.
-- [ ] **4.4** Экран результатов: список найденных фрагментов (collectAsState из
+  > Сделано: onRun() с валидацией URL/запроса и startSearch → ChromeLauncher.open.
+- [x] **4.4** Экран результатов: список найденных фрагментов (collectAsState из
   репозитория), кнопка «Открыть в Chrome», пустое состояние.
+  > Сделано: ResultsList (LazyColumn) + StatusLine (searching/no_match/error).
 
 ## Этап 5. Надёжность и финал
 
