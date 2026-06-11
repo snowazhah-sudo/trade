@@ -61,20 +61,27 @@
 
 ## Этап 3. Accessibility Service (ядро)
 
-- [ ] **3.1** `BrowserAutomationService extends AccessibilityService` —
+- [x] **3.1** `BrowserAutomationService extends AccessibilityService` —
   заготовка: `onServiceConnected`, `onAccessibilityEvent`, `onInterrupt`.
-- [ ] **3.2** Фильтрация: реагировать только когда на переднем плане Chrome
+  > Сделано: service/BrowserAutomationService.kt.
+- [x] **3.2** Фильтрация: реагировать только когда на переднем плане Chrome
   (`packageName == com.android.chrome`).
-- [ ] **3.3** Определение «страница загрузилась»: дебаунс событий
+  > Сделано: проверка packageName + статус SEARCHING.
+- [x] **3.3** Определение «страница загрузилась»: дебаунс событий
   `TYPE_WINDOW_CONTENT_CHANGED` (например, тишина 800 мс).
-- [ ] **3.4** `PageScanner` — рекурсивный обход `rootInActiveWindow`/
+  > Сделано: Handler.postDelayed с DEBOUNCE_MS=800.
+- [x] **3.4** `PageScanner` — рекурсивный обход `rootInActiveWindow`/
   `AccessibilityNodeInfo`, сбор всего видимого текста в список с сохранением
   порядка.
-- [ ] **3.5** Поиск: применить `SearchQuery` к собранному тексту (CONTAINS и
+  > Сделано: PageScanner.collectTexts (text + contentDescription, защита по глубине/кол-ву).
+- [x] **3.5** Поиск: применить `SearchQuery` к собранному тексту (CONTAINS и
   REGEX), вырезать фрагмент-контекст вокруг совпадения.
-- [ ] **3.6** Отдать результаты в `SearchRepository` (обновить StateFlow).
-- [ ] **3.7** (Опц.) Автопрокрутка страницы (`ACTION_SCROLL_FORWARD`) чтобы
+  > Сделано: PageScanner.search + buildSnippet (контекст ±60 симв., дедуп).
+- [x] **3.6** Отдать результаты в `SearchRepository` (обновить StateFlow).
+  > Сделано: publishResults из performScan.
+- [x] **3.7** (Опц.) Автопрокрутка страницы (`ACTION_SCROLL_FORWARD`) чтобы
   прочитать контент ниже видимой области, с защитой от зацикливания.
+  > Сделано: findScrollable + scrollForward, лимит MAX_SCROLLS=6.
 
 ## Этап 4. UI
 
