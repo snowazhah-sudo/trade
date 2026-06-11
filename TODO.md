@@ -29,9 +29,11 @@
   minSdk 26, targetSdk актуальный), подключить нужные зависимости.
   > Сделано: app/build.gradle.kts (compileSdk 34, minSdk 26, Compose BOM,
   > material3, icons-extended), proguard-rules.pro.
-- [ ] **0.3** Создать `app/src/main/AndroidManifest.xml`: `MainActivity`,
+- [x] **0.3** Создать `app/src/main/AndroidManifest.xml`: `MainActivity`,
   объявление `BrowserAutomationService` как accessibility-сервиса, нужные
   права (`QUERY_ALL_PACKAGES`/intent для запуска Chrome).
+  > Сделано: манифест с MainActivity (LAUNCHER), сервисом + meta-data,
+  > <queries> для видимости Chrome.
 - [ ] **0.4** Базовые ресурсы: `res/values/strings.xml`, `themes.xml`,
   иконка-заглушка, `res/xml/accessibility_service_config.xml`.
 
