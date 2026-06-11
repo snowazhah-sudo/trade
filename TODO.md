@@ -25,8 +25,10 @@
   > Сделано: settings/build/gradle.properties, gradlew(+.bat), wrapper.properties,
   > .gitignore. Бинарный gradle-wrapper.jar генерируется командой `gradle wrapper`
   > (см. gradle/wrapper/README.md) — проверить на устройстве/в Android Studio.
-- [ ] **0.2** Создать модуль `app/` с `app/build.gradle.kts` (Kotlin, Compose,
+- [x] **0.2** Создать модуль `app/` с `app/build.gradle.kts` (Kotlin, Compose,
   minSdk 26, targetSdk актуальный), подключить нужные зависимости.
+  > Сделано: app/build.gradle.kts (compileSdk 34, minSdk 26, Compose BOM,
+  > material3, icons-extended), proguard-rules.pro.
 - [ ] **0.3** Создать `app/src/main/AndroidManifest.xml`: `MainActivity`,
   объявление `BrowserAutomationService` как accessibility-сервиса, нужные
   права (`QUERY_ALL_PACKAGES`/intent для запуска Chrome).
