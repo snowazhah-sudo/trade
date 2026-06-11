@@ -41,12 +41,15 @@
 
 ## Этап 1. Модели и хранилище
 
-- [ ] **1.1** Модель `SearchQuery` (url: String, keyword: String,
+- [x] **1.1** Модель `SearchQuery` (url: String, keyword: String,
   matchMode: enum CONTAINS/REGEX).
-- [ ] **1.2** Модель `SearchResult` (snippet: String, fullText: String?,
+  > Сделано: model/SearchQuery.kt + enum MatchMode.
+- [x] **1.2** Модель `SearchResult` (snippet: String, fullText: String?,
   timestamp: Long).
-- [ ] **1.3** `SearchRepository` — синглтон с `StateFlow<SearchQuery?>` и
+  > Сделано: model/SearchResult.kt.
+- [x] **1.3** `SearchRepository` — синглтон с `StateFlow<SearchQuery?>` и
   `StateFlow<List<SearchResult>>` для связи UI ⇄ сервиса.
+  > Сделано: data/SearchRepository.kt + enum ScanStatus (IDLE/SEARCHING/DONE/NO_MATCH/ERROR).
 
 ## Этап 2. Запуск Chrome
 
