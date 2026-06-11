@@ -34,8 +34,10 @@
   права (`QUERY_ALL_PACKAGES`/intent для запуска Chrome).
   > Сделано: манифест с MainActivity (LAUNCHER), сервисом + meta-data,
   > <queries> для видимости Chrome.
-- [ ] **0.4** Базовые ресурсы: `res/values/strings.xml`, `themes.xml`,
+- [x] **0.4** Базовые ресурсы: `res/values/strings.xml`, `themes.xml`,
   иконка-заглушка, `res/xml/accessibility_service_config.xml`.
+  > Сделано: strings, themes, colors, adaptive-иконка (лупа),
+  > accessibility_service_config.xml (слушает только Chrome).
 
 ## Этап 1. Модели и хранилище
 

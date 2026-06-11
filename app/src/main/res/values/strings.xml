@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ChromeFinder</string>
+    <string name="accessibility_service_label">ChromeFinder — чтение страницы</string>
+    <string name="accessibility_service_description">Читает текст открытой в Chrome страницы, чтобы найти заданную вами информацию. Работает только когда вы нажимаете «Запустить».</string>
+
+    <!-- UI -->
+    <string name="url_hint">Адрес сайта (https://…)</string>
+    <string name="query_hint">Что искать на странице</string>
+    <string name="run">Запустить</string>
+    <string name="open_in_chrome">Открыть в Chrome</string>
+    <string name="mode_contains">Содержит</string>
+    <string name="mode_regex">Регулярка</string>
+
+    <!-- Состояния -->
+    <string name="service_off_banner">Служба спец. возможностей выключена — без неё чтение страницы не работает.</string>
+    <string name="open_accessibility_settings">Открыть настройки спец. возможностей</string>
+    <string name="no_results">Пока ничего не найдено</string>
+    <string name="searching">Идёт поиск на странице…</string>
+    <string name="chrome_not_installed">Google Chrome не установлен на устройстве.</string>
+    <string name="empty_url">Введите адрес сайта.</string>
+    <string name="empty_query">Введите, что искать.</string>
+</resources>

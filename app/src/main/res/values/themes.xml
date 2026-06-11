@@ -1,0 +1,7 @@
+<resources>
+    <!--
+        Базовая тема. Компоновка делается в Compose (Material3), поэтому тут
+        достаточно темы без ActionBar.
+    -->
+    <style name="Theme.ChromeFinder" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

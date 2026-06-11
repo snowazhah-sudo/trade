@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Конфигурация Accessibility-сервиса.
+    - Слушаем изменения содержимого окна и состояния окна, чтобы поймать
+      момент загрузки страницы в Chrome.
+    - canRetrieveWindowContent="true" — нужно для чтения текста страницы.
+    - packageNames ограничивает прослушку только Chrome (приватность + меньше шума).
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault|flagRetrieveInteractiveWindows"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="200"
+    android:packageNames="com.android.chrome" />
