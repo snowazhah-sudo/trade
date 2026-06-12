@@ -31,6 +31,19 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
 
+      - name: Inspect & verify APK
+        run: |
+          set -e
+          APK=app/build/outputs/apk/debug/app-debug.apk
+          BT=$(ls -d "$ANDROID_SDK_ROOT"/build-tools/* | sort -V | tail -1)
+          echo "=== Размер ==="
+          ls -la "$APK"
+          echo "=== Манифест (aapt badging) ==="
+          "$BT/aapt" dump badging "$APK" | grep -E "package:|sdkVersion:|targetSdkVersion:|application-label:|launchable-activity:" || true
+          echo "=== Подпись (apksigner) ==="
+          "$BT/apksigner" verify --verbose --print-certs "$APK"
+          echo "=== ИТОГ: APK валиден и подписан ==="
+
       - name: Rename APK
         run: cp app/build/outputs/apk/debug/app-debug.apk ChromeFinder-debug.apk
 
